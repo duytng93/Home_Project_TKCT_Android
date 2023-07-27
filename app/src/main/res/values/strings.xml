@@ -1,0 +1,121 @@
+<resources>
+    <string name="app_name">TKCTv2</string>
+    <string-array name="cardOwner">
+        <item>Select</item>
+        <item>be</item>
+        <item>hieu</item>
+        <item>ti</item>
+        <item>nhi</item>
+    </string-array>
+    <string-array name="purOwner">
+        <item>2. Select a name:</item>
+        <item>be</item>
+        <item>hieu</item>
+        <item>ti</item>
+        <item>nhi</item>
+    </string-array>
+    <string-array name="stores">
+        <item>3. Select a store, utilities, or cash back:</item>
+        <item>Walmart</item>
+        <item>Sam</item>
+        <item>Costco</item>
+        <item>Pan Asia</item>
+        <item>Aldi</item>
+        <item>Sprouts</item>
+        <item>Utilities</item>
+        <item>Other</item>
+        <item>Cashback</item>
+    </string-array>
+    <string-array name="months">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="leftButton">Previous</string>
+    <string name="rightButton">Next</string>
+
+    <!--activity_main.xml-->
+    <string name="restart">Restart</string>
+
+    <!--add_help.xml-->
+    <string name="add_help_1">Step 1: Type in the purchase \n or cash back amount.</string>
+    <string name="add_help_2">**********\nStep 2: Choose a person name from the list,</string>
+    <string name="add_help_2_continued">Step 2 (continued):\nOr type in the card number (3 last digit for credit cards or 4 last digit for gift cards.)\n If a person name is selected, any typed-in card number will not be used when adding transaction</string>
+    <string name="add_help_2_continued_2">Step 2 (continued):\nNew card could be added by cliking the add card icon.\nFill in card information in the prompt and click Add</string>
+    <string name="add_help_3">**********\nStep 3: Select a store name, utilities, or cash back from the list</string>
+    <string name="add_help_4">**********\nStep 4: Type in description for the transaction. If the amount is over $50, description is mandate.</string>
+    <string name="add_help_5">**********\nStep 5: Click Add transaction to finish</string>
+    <string name="add_help_6">**********\nTo view purchases, swipe left. To view summary, swipe right</string>
+    <string name="enter_card_information">Enter card information:</string>
+
+    <!--card_input_layout.xml-->
+    <string name="card_number">Card number:</string>
+    <string name="re_enter_card_number">Re-enter card number:</string>
+    <string name="choose_a_name">Choose a name:</string>
+    <string name="add_card_help">*** Type in the last 3 digits for a credit or last 4 digits for a gift card ***</string>
+
+    <!--fragment_add.xml-->
+    <string name="question_1">1. How much is this transaction?</string>
+    <string name="or">Or</string>
+    <string name="add_transaction">Add Transaction</string>
+    <string name="question_4">4. Comment (optional):</string>
+    <string name="question_2">2. Type in the card#:</string>
+    <string name="swipe_right_summary"><![CDATA[Summary ---->>]]></string>
+    <string name="swipe">-- swipe --</string>
+    <string name="swipe_left_view"><![CDATA[<<---- View]]></string>
+
+    <!--fragment_summary.xml-->
+    <string name="swipe_right_view"><![CDATA[View ---->>]]></string>
+    <string name="swipe_left_add"><![CDATA[<<---- Add]]></string>
+    <string name="aldi">Aldi</string>
+    <string name="walmart">Walmart</string>
+    <string name="sam_s_club">Sam\'s Club</string>
+    <string name="costco">Costco</string>
+    <string name="pan_asia">Pan Asia</string>
+    <string name="sprout">Sprout</string>
+    <string name="utilities">Utilities</string>
+    <string name="other">Other</string>
+    <string name="bar_chart_note">Monthly expenses (not include housing)</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="be_hieu">Be + Hieu :</string>
+    <string name="ti">Ti :</string>
+    <string name="nhi">Nhi :</string>
+
+    <!--fragment_summary.xml-->
+    <string name="remove_last_transaction">Remove last transaction</string>
+    <string name="swipe_right_add"><![CDATA[Add ---->>]]></string>
+    <string name="swipe_left_summary"><![CDATA[<<---- Summary]]></string>
+
+    <!--summary_help.xml-->
+    <string name="summary_help_text_1">By default, current month is always selected.\nTo view other month\'s summary, select a month from the list or click left and right arrow.</string>
+    <string name="summary_help_text_2">**********\nThe Pie chart shows expenses from stores and utilities of the current month.</string>
+    <string name="summary_help_text_3">**********\nThe Bar chart compares total expenses (not include housing) between several months.</string>
+    <string name="summary_help_text_4">**********\nBalance board shows the balance of each person.\nPositive balance means that person is owing money to others.\nNegative balance means the opposite.</string>
+    <string name="summary_help_text_5">**********\nClick Details to view full summary.</string>
+    <string name="summary_help_text_6">**********\nIncrease or decrease font size by clicking Zoom in or Zoom out if needed.</string>
+    <string name="summary_help_text_7">**********\nTo add purchases, swipe left. To view purchases, swipe right</string>
+
+    <!--user_input.xml-->
+    <string name="please_comment">Please comment on this large purchase:</string>
+    <string name="type_something">Type something here.</string>
+    <string name="view_help_text_1">Last transaction always appears first.</string>
+    <string name="view_help_text_2">**********\nTo view transaction details, click on blue arrow.</string>
+    <string name="view_help_text_3">**********\nLast transaction could be remove by clicking the button below.</string>
+    <string name="view_help_text_4">**********\nTo view summary, swipe left. To add purchases, swipe right</string>
+
+    <!--ftp server info-->
+    <string name="server"> </string> <!--ftp server address-->
+    <string name="username"> </string> <!--username-->
+    <string name="password"> </string> <!--password-->
+</resources>

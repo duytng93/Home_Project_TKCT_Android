@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SummaryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/errorView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#FF0000"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="ERROR" />
+
+        <Spinner
+            android:id="@+id/monthSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/blue"
+            android:gravity="center"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/leftButton"
+            app:layout_constraintTop_toTopOf="@+id/leftButton" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/monthSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/rightButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/monthSpinner"
+            tools:text="/ 2023" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="409dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="9dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monthSpinner" />
+
+        <ImageButton
+            android:id="@+id/leftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/leftButton"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintEnd_toStartOf="@+id/monthSpinner"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_left_arrow" />
+
+        <ImageButton
+            android:id="@+id/rightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/rightButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/leftButton"
+            app:srcCompat="@drawable/ic_right_arrow" />
+
+        <LinearLayout
+            android:id="@+id/swipeLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|left"
+                android:text="@string/swipe_right_view"
+                android:layout_marginBottom="15dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:text="@string/swipe"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|right"
+                android:text="@string/swipe_left_add"
+                android:layout_marginBottom="15dp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/greyLoadingBackground"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/blue" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toTopOf="@id/swipeLinearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monthSpinner">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_border_background"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <org.eazegraph.lib.charts.PieChart
+                        android:id="@+id/piechart"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:animateLayoutChanges="true"
+                        android:animationCache="true"
+                        android:padding="6dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/Aldi" />
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:id="@+id/aldi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="@string/aldi" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/Walmart" />
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:id="@+id/walmart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="@string/walmart" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/Sam" />
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:id="@+id/sam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="@string/sam_s_club" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/Costco" />
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:id="@+id/costco"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="@string/costco" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/PanAsia" />
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:id="@+id/panAsia"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="@string/pan_asia" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/Sprouts" />
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:id="@+id/sprouts"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="@string/sprout" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/Utilities" />
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:id="@+id/utilities"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="@string/utilities" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_vertical">
+
+                            <!--View to display the yellow color icon-->
+                            <View
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@color/Other" />
+
+                            <!--Text view to display R -->
+                            <TextView
+                                android:id="@+id/other"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="@string/other" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/text_border_background"
+                    android:orientation="vertical">
+
+                    <org.eazegraph.lib.charts.BarChart
+                        android:id="@+id/barchart"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:animationCache="true"
+                        android:padding="10dp"
+                        app:egBarWidth="20dp"
+                        app:egFixedBarWidth="true"
+                        app:egLegendHeight="40dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text="@string/bar_chart_note"></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/balanceLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/current_balance"
+                        android:textSize="25sp"
+                        android:textStyle="italic" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:text="@string/be_hieu"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/beBalance"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="25sp"
+                                android:textStyle="italic" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:text="@string/ti"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tiBalance"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="25sp"
+                                android:textStyle="italic" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:text="@string/nhi"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/nhiBalance"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="25sp"
+                                android:textStyle="italic" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/sumTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/text_border_background"
+                    android:fontFamily="monospace"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbars="horizontal|vertical"
+                    android:scrollHorizontally="true"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                    android:visibility="gone">
+
+                </TextView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/detailButtonFloat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Details"
+            app:backgroundTint="@color/blue"
+            app:icon="@drawable/ic_arrow_down2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/swipeLinearLayout" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/zoomInButtonFloat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="15dp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/blue"
+            app:layout_constraintStart_toEndOf="@+id/detailButtonFloat"
+            app:layout_constraintTop_toTopOf="@id/swipeLinearLayout"
+            app:srcCompat="@drawable/zoom_in" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/zoomOutButtonFloat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="12dp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/blue"
+            app:layout_constraintEnd_toStartOf="@+id/detailButtonFloat"
+            app:layout_constraintTop_toTopOf="@id/swipeLinearLayout"
+            app:srcCompat="@drawable/zoom_out" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
+
+<!--
+<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/zoomOutButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/zoom_out"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/detailButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_arrow_down2"
+                        android:text="Details" />
+
+                    <ImageButton
+                        android:id="@+id/zoomInButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/zoom_in"
+                        android:visibility="invisible" />
+
+                </LinearLayout>-->

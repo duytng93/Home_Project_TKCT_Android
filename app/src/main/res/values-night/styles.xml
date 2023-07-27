@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ActionButtonStyle" parent="@android:style/Widget.Holo.ActionButton">
+        <item name="android:minWidth">0dip</item>
+        <item name="android:paddingStart">5dip</item>
+        <item name="android:paddingEnd">5dip</item>
+    </style>
+
+</resources>

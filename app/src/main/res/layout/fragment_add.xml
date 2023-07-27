@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SummaryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/statusView"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:gravity="center_horizontal"
+            android:textColor="#03A9F4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/ownSpinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15">
+
+            <EditText
+                android:id="@+id/amtField"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/transparent"
+                android:ems="25"
+                android:gravity="center"
+                android:hint="@string/question_1"
+                android:inputType="number|numberDecimal"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textStyle="italic" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/or"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            app:layout_constraintBottom_toTopOf="@+id/cardNumberFieldLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ownSpinner" />
+
+
+        <Spinner
+            android:id="@+id/ownSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/blue"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <Spinner
+            android:id="@+id/storeSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/blue"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/cmtEditViewLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardNumberFieldLayout" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cmtEditViewLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/storeSpinner">
+
+            <EditText
+                android:id="@+id/cmtEditView"
+                android:layout_width="290dp"
+                android:layout_height="match_parent"
+                android:ems="15"
+                android:gravity="center"
+                android:hint="@string/question_4"
+                android:background="@android:color/transparent"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="@string/add_transaction"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/errorView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cmtEditViewLayout" />
+
+        <TextView
+            android:id="@+id/errorView"
+            android:layout_width="335dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_horizontal"
+            android:textColor="#EF2020"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="ERROR" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cardNumberFieldLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/storeSpinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/addCardButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <EditText
+                android:id="@+id/cardNumberField"
+                android:layout_width="194dp"
+                android:layout_height="match_parent"
+                android:ems="8"
+                android:gravity="center"
+                android:hint="@string/question_2"
+                android:background="@android:color/transparent"
+                android:inputType="number"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textStyle="italic"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/greyLoadingBackground"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/blue" />
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/addCardButton"
+            android:layout_width="48dp"
+            android:layout_height="68dp"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cardNumberFieldLayout"
+            app:layout_constraintTop_toTopOf="@+id/cardNumberFieldLayout"
+            app:srcCompat="@drawable/ic_add_card" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="@string/swipe_right_summary"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/swipe"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:text="@string/swipe_left_view"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

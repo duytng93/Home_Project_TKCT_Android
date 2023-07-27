@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#FF039BE5</color>
+    <color name ="lightblue">#FF4FC3F7</color>
+    <color name="green">#45BD4E</color>
+    <color name="lightgreen">#A5D6A7</color>
+    <color name ="greyLoadingBackground">#80949798</color>
+    <color name = "gray">#808080</color>
+    <color name="Aldi">#FC0008</color>
+    <color name="Sam">#FB7D3A</color>
+    <color name="Walmart">#FDD400</color>
+    <color name="Costco">#1FBF02</color>
+    <color name="PanAsia">#3A72FF</color>
+    <color name="Other">#6B2BFF</color>
+    <color name="Sprouts">#28F4B4</color>
+    <color name="Utilities">#C32F99</color>
+
+</resources>
+
+<!-- the first 2 letter is for transparency-->

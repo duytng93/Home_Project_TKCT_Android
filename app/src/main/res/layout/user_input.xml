@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is the layout for the comment dialogFragment-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/user_input_textView"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:text="@string/please_comment"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/user_input_editView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/type_something"
+        android:inputType="text" />
+
+</LinearLayout>

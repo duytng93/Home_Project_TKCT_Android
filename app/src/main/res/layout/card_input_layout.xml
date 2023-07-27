@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/card_input_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:text="@string/enter_card_information"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/card_input_numView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/card_number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/card_input_editNumber"
+        app:layout_constraintEnd_toStartOf="@+id/card_input_editNumber"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/card_input_editNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/card_input_helpButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_input_numView"
+        app:layout_constraintTop_toBottomOf="@+id/card_input_title" />
+
+    <EditText
+        android:id="@+id/card_input_editNumberPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="numberPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_input_numView2"
+        app:layout_constraintTop_toBottomOf="@+id/card_input_editNumber" />
+
+    <TextView
+        android:id="@+id/card_input_numView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/re_enter_card_number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/card_input_editNumberPassword"
+        app:layout_constraintEnd_toStartOf="@+id/card_input_editNumberPassword"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/card_input_nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_a_name"
+        app:layout_constraintBaseline_toBaselineOf="@+id/card_input_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/card_input_spinner"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/card_input_spinner"
+        android:layout_width="135dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/blue"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_input_nameView"
+        app:layout_constraintTop_toBottomOf="@+id/card_input_editNumberPassword" />
+
+    <Button
+        android:id="@+id/card_input_helpButton"
+        android:layout_width="59dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:drawableRight="@drawable/ic_help"
+        app:layout_constraintBaseline_toBaselineOf="@+id/card_input_editNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/card_input_editNumber" />
+
+    <TextView
+        android:id="@+id/card_input_helpTextView"
+        android:layout_width="283dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="@string/add_card_help"
+        android:textColor="@color/blue"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_input_spinner" />
+</androidx.constraintlayout.widget.ConstraintLayout>

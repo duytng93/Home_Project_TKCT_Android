@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/add"
+        android:title="Add purchases"
+        android:icon="@drawable/ic_add_clicked"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/view"
+        android:title="View purchases"
+        android:icon="@drawable/ic_view"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/summary"
+        android:title="View summaries"
+        android:icon="@drawable/ic_summary"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/help"
+        android:title="Help"
+        android:icon="@drawable/ic_help_actionbar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/more_tool"
+        android:title="Exit"
+        android:icon="@drawable/ic_3dot"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/exit"
+                android:title="Exit"
+                android:icon="@drawable/ic_exit"
+                app:showAsAction="always"
+                />
+        </menu>
+    </item>
+</menu>

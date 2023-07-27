@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/summary_help_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="@color/green"
+                android:text="@string/summary_help_text_1" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="138dp"
+                app:srcCompat="@drawable/summary_help_1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/green"
+                android:text="@string/summary_help_text_2" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="179dp"
+                app:srcCompat="@drawable/summary_help_2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/green"
+                android:text="@string/summary_help_text_3" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="235dp"
+                app:srcCompat="@drawable/summary_help_3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/green"
+                android:text="@string/summary_help_text_4" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="185dp"
+                app:srcCompat="@drawable/summary_help_4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/green"
+                android:text="@string/summary_help_text_5" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                app:srcCompat="@drawable/summary_help_5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/green"
+                android:text="@string/summary_help_text_6" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="239dp"
+                app:srcCompat="@drawable/summary_help_7" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/green"
+                android:text="@string/summary_help_text_7" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                app:srcCompat="@drawable/summary_help_8" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

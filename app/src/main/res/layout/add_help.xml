@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_help_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/add_help_1"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="129dp"
+                app:srcCompat="@drawable/add_help_1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_help_2"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                app:srcCompat="@drawable/add_help_2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_help_2_continued"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                app:srcCompat="@drawable/add_help_3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_help_2_continued_2"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                app:srcCompat="@drawable/add_help_4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_help_3"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="201dp"
+                app:srcCompat="@drawable/add_help_5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_help_4"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                app:srcCompat="@drawable/add_help_6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_help_5"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="211dp"
+                app:srcCompat="@drawable/add_help_7" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_help_6"
+                android:textColor="@color/green" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
